@@ -704,6 +704,7 @@ img {
   display: inline-flex;
   fill: transparent;
   cursor: pointer;
+  justify-content: center;
   align-items: center;
   width: 16px;
   height: 16px;
