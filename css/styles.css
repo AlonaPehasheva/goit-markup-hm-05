@@ -531,7 +531,6 @@ img {
 }
 
 .modal-container {
-  display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -539,6 +538,7 @@ img {
   width: 408px;
   height: 584px;
   margin: 0;
+  padding: 72px 24px 24px 24px;
   border-radius: 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
@@ -577,44 +577,51 @@ img {
   letter-spacing: 0.02em;
   text-align: center;
   color: #2e2f42;
-  margin-top: 72px;
 }
 
 .field-wrapper {
-  margin: 16px 24px;
+  margin-bottom: 8px;
+  justify-content: center;
 }
 
 .label-modal {
   display: block;
   width: 100%;
   color: #8e8f99;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  margin-bottom: 4px;
 }
 .field-icon-container {
   position: relative;
-  margin-bottom: 8px;
 }
 .icon-field {
   position: absolute;
   top: 50%;
   left: 16px;
   transform: translateY(-50%);
-  stroke: #2e2f42;
+  fill: #2e2f42;
   border: 0;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input {
-  border: 1px solid #000;
+  border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   padding-left: 38px;
-  width: 360px;
+  width: 100%;
   height: 40px;
   margin-top: 4px;
-  transition: border-color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent;
+  padding-left: 38px;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input:focus {
-  outline: transparent;
-  border-color: #4d5ae5;
+  order-color: #4d5ae5;
 }
 
 .modal-input:focus + .icon-field {
@@ -625,12 +632,19 @@ img {
 }
 
 .modal-textarea {
-  border: 1px solid #2e2f4266;
+  border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  background-color: transparent;
+  padding: 8px 16px;
   height: 120px;
   width: 100%;
+  font-size: 12px;
+  outline: transparent;
   resize: none;
-  transition: border-color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-textarea::placeholder {
   color: #2e2f4266;
@@ -643,6 +657,7 @@ img {
 
 .checkbox-container {
   position: relative;
+  margin-bottom: 24px;
 }
 
 .input-checkbox {
@@ -655,11 +670,9 @@ img {
   height: 16px;
   border-radius: 2px;
   border: 1px solid #404bbf;
-  visibility: hidden;
 }
 
 .label-checkbox {
-  font-weight: 400;
   font-size: 12px;
   line-height: 117%;
   letter-spacing: 0.04em;
@@ -678,6 +691,7 @@ img {
   position: absolute;
   top: 50%;
   left: 0;
+  fill: transparent;
   transform: translateY(-50%);
   cursor: pointer;
   justify-content: center;
@@ -685,29 +699,35 @@ img {
   width: 16px;
   height: 16px;
   border-radius: 2px;
-  border: 1px solid #404bbf;
+  border: 1px solidr gba(46, 47, 66, 0.4);
   stroke: transparent;
-}
-.input-checkbox:checked + .label-checkbox .span-checkbox {
-  background-color: #404bbf;
-  stroke: #fff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.submit-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
+.input-checkbox:checked + .label-checkbox .span-checkbox {
+  background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
 }
 
 .submit-btn {
+  display: block;
   background-color: #4d5ae5;
   border-radius: 4px;
   padding: 16px 32px;
-  width: 169px;
+  min-width: 169px;
   height: 56px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  cursor: pointer;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 24px;
   border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
